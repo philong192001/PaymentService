@@ -1,5 +1,4 @@
-﻿
-namespace Payment.App.Models.VnPay;
+﻿namespace Payment.App.Models.VnPay;
 
 public class MerchantRequest
 {
@@ -41,16 +40,22 @@ public class MerchantRequest
 
     [JsonPropertyName("name")]
     public string Name { set; get; }
+
     [JsonPropertyName("phone")]
     public string Phone { set; get; }
+
     [JsonPropertyName("province_id")]
     public string ProvinceId { set; get; }
+
     [JsonPropertyName("district_id")]
     public string DistrictId { set; get; }
+
     [JsonPropertyName("address")]
     public string Address { set; get; }
+
     [JsonPropertyName("email")]
     public string Email { set; get; }
+
     [JsonPropertyName("checksum")]
     public string CheckSum { set; get; }
 }

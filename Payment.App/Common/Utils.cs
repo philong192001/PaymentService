@@ -11,8 +11,16 @@ public class Utils
     {
         using (var md5 = MD5.Create())
         {
-            var result = md5.ComputeHash(Encoding.ASCII.GetBytes(input));
-            return Encoding.ASCII.GetString(result);
+            var inputBytes = Encoding.UTF8.GetBytes(input);
+            var hashBytes = md5.ComputeHash(inputBytes);
+
+            var sb = new StringBuilder();
+            foreach (var b in hashBytes)
+            {
+                sb.Append(b.ToString("x2"));
+            }
+
+            return sb.ToString();
         }
     }
 
@@ -20,10 +28,10 @@ public class Utils
     {
         using (var sha256Hash = SHA256.Create())
         {
-            // ComputeHash - returns byte array  
+            // ComputeHash - returns byte array
             var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(data));
 
-            // Convert byte array to a string   
+            // Convert byte array to a string
             var builder = new StringBuilder();
             foreach (var t in bytes)
             {
@@ -32,6 +40,7 @@ public class Utils
             return builder.ToString();
         }
     }
+
     public static string GetIpAddress()
     {
         string ipAddress;
@@ -55,7 +64,7 @@ public class Utils
         return ipAddress;
     }
 
-    static byte[] StringToByteArray(string hex)
+    private static byte[] StringToByteArray(string hex)
     {
         int numberChars = hex.Length;
         byte[] bytes = new byte[numberChars / 2];
@@ -87,7 +96,7 @@ public class Utils
         }
     }
 
-    static string SortQueryString(string queryString)
+    private static string SortQueryString(string queryString)
     {
         var queryParams = HttpUtility.ParseQueryString(queryString);
 
@@ -215,5 +224,43 @@ public class Utils
                 data.SaveTo(stream);
             }
         }
+    }
+
+    public static void InsertTransaction(CreateTransactionDTO createTransactionDTO, PaymentDbContext paymentDbContext)
+    {
+        var transaction = new QRPayTransaction()
+        {
+            BookId = createTransactionDTO.BookId,
+            Amount = double.Parse(createTransactionDTO.Amount),
+            CompanyId = createTransactionDTO.CompanyId,
+            PaymentType = (int)createTransactionDTO.PaymentType,
+            QRCode = createTransactionDTO.PathQR,
+            DriverCode = createTransactionDTO.DriverId,
+            Status = (int)TransType.Wait
+        };
+        paymentDbContext.QRPayTransactions.Add(transaction);
+        paymentDbContext.SaveChanges();
+    }
+
+    public static void UpdateTransaction(QRPayTransaction qRPayTransaction, PaymentDbContext paymentDbContext)
+    {
+        paymentDbContext.QRPayTransactions.Attach(qRPayTransaction);
+        // Đánh dấu chỉ cập nhật các trường cần thay đổi
+        paymentDbContext.Entry(qRPayTransaction).Property(e => e.PartnerTransId).IsModified = true;
+        paymentDbContext.Entry(qRPayTransaction).Property(e => e.Status).IsModified = true;
+        paymentDbContext.SaveChanges();
+    }
+
+    public static string SendNotiPayment(HttpClient httpClient, UpdatePaymentStatusRequest updatePaymentStatusRequest, string url)
+    {
+        // Chuyển đối tượng data thành chuỗi JSON
+        var jsonData = JsonSerializer.Serialize(updatePaymentStatusRequest);
+        // Tạo nội dung của yêu cầu POST
+        var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+
+        var response = httpClient.PostAsync(url, content);
+        var responseBody = response.Result.Content.ReadAsStringAsync();
+
+        return responseBody.Result;
     }
 }

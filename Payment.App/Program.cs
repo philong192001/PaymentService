@@ -1,39 +1,49 @@
+﻿using Microsoft.OpenApi.Models;
 using Payment.App.Extensions;
 
-namespace Payment.App
+namespace Payment.App;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Add services to the container.
+
+        builder.Services.AddControllers();
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen(c =>
         {
-            var builder = WebApplication.CreateBuilder(args);
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+            // Set the comments path for the Swagger JSON and UI.
+            var xmlFile = $"GettingStartedWithSwaggerUI.xml";
+            var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+            c.IncludeXmlComments(xmlPath);
+        });
+        builder.Services.AddHttpClient();
 
-            // Add services to the container.
+        builder.Services.RegisterService(builder.Configuration);
+        var app = builder.Build();
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-            builder.Services.AddHttpClient();
-
-            builder.Services.RegisterService(builder.Configuration);
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+        // Configure the HTTP request pipeline.
+        //if (app.Environment.IsDevelopment())
+        //{
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Payment Service");
+            });
+        //}
 
-            app.UseHttpsRedirection();
+        app.UseHttpsRedirection();
 
-            app.UseAuthorization();
-            app.UseCors();
+        app.UseAuthorization();
+        app.UseCors();
 
-            app.MapControllers();
+        app.MapControllers();
 
-            app.Run();
-        }
+        app.Run();
     }
 }

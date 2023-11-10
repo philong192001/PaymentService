@@ -1,6 +1,4 @@
-﻿using Payment.App.Common.Enums;
-
-namespace Payment.App.Models.VnPay;
+﻿namespace Payment.App.Models.VnPay;
 
 public class VnPayTrans
 {
@@ -10,6 +8,6 @@ public class VnPayTrans
     public string Amount { get; set; }
     public string TerminalId { get; set; }
     public DateTime CreatedDate { get; set; }
-    public int ErrorCode { get; set; }
+    public int? ErrorCode { get; set; }
     public string Message { get; set; }
 }

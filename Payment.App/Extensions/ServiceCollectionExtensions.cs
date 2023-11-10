@@ -5,9 +5,12 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection RegisterService(this IServiceCollection services, IConfiguration configuration)
     {
         var appSetting = AppSetting.MapValue(configuration);
-        services.AddHostedService<GetTokenVnPayBackgroundTask>();
         services.AddSingleton(appSetting);
-        services.AddDbContext<PaymentDbContext>( x => x.UseSqlServer(appSetting.ConnectionString, options =>
+        services.AddDbContext<PaymentDbContext>(x => x.UseSqlServer(appSetting.ConnectionString22, options =>
+        {
+            options.EnableRetryOnFailure();
+        }));
+        services.AddDbContext<ConfigDbContext>(x => x.UseSqlServer(appSetting.ConnectionString3, options =>
         {
             options.EnableRetryOnFailure();
         }));

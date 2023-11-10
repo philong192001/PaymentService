@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Payment.App.Controllers
+﻿namespace Payment.App.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
