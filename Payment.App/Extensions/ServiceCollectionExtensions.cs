@@ -1,4 +1,6 @@
-﻿namespace Payment.App.Extensions;
+﻿using Serilog;
+
+namespace Payment.App.Extensions;
 
 public static class ServiceCollectionExtensions
 {
@@ -15,6 +17,9 @@ public static class ServiceCollectionExtensions
             options.EnableRetryOnFailure();
         }));
         services.AddHttpContextAccessor();
+
+      
+
         return services;
     }
 }

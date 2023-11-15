@@ -21,5 +21,5 @@ public class VnPayQrRequest
     /// <summary>
     /// ID Lái xe
     /// </summary>
-    public int DriverId { get; set; }
+    public string DriverId { get; set; }
 }

@@ -1,4 +1,6 @@
-﻿namespace Payment.App.Controllers;
+﻿using Payment.App.DTOs;
+
+namespace Payment.App.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -32,9 +34,14 @@ public class VnPayController : ControllerBase
     {
         try
         {
+            var res = new ResponseAppDTO<string>();
+
             if (payQrRequest == null)
             {
-                return NotFound();
+                res.ErrorCode = ErrorCodeEnum.NullRequest;
+                res.Data = "Request Null";
+                res.Message = ErrorCodeEnum.NullRequest.GetDescription();
+                return NotFound(res);
             }
 
             HttpClient client = _factory.CreateClient();
@@ -68,9 +75,23 @@ public class VnPayController : ControllerBase
             var data = JsonSerializer.Deserialize<VnPayQrResponse>(jsonData, _jsonSerializerOptions);
             //đường dẫn ảnh
             var pathImage = Utils.Base64ToImage(data.Data.Image, Guid.NewGuid().ToString(), config.PathImage);
+
+            //Tạo transaction để lưu dưới trạng thái đợi thanh toán
+            var trans = new CreateTransactionDTO()
+            {
+                Amount = payQrRequest.Amount,
+                DriverId = payQrRequest.DriverId,
+                CompanyId = payQrRequest.CompanyId,
+                PaymentType = PaymentType.VNPay,
+                PathQR = pathImage,
+                BookId = new Guid(payQrRequest.BookId),
+            };
+
             //lưu giao dịch dưới trạng thái chờ thanh toán
-            //Utils.InsertTransaction()
-            return Ok(pathImage);
+            Utils.InsertTransaction(trans, _dbContext);
+
+            res.Data = pathImage;
+            return Ok(res);
         }
         catch (Exception ex)
         {
@@ -83,6 +104,7 @@ public class VnPayController : ControllerBase
     {
         try
         {
+
             var temp = ValidateTrans(request);
             if (temp.Code != "00")
             {
@@ -90,6 +112,7 @@ public class VnPayController : ControllerBase
             }
 
             HttpClient client = _factory.CreateClient();
+            var url = _configDbContext.PaymentConfigs.Where(x => x.PaymentType.Equals(Constants.VNPAY) && x.Merchant.Equals(request.MerchantCode) && x.AccessCode.Equals(request.TerminalId)).Select(x => x.UrlCreateQR).FirstOrDefault();
 
             // Phân biệt QR tĩnh hay động qua Terminal có bằng Terminal của Bình Anh không
             // Chỉ có phần thanh toán cuốc
@@ -113,6 +136,14 @@ public class VnPayController : ControllerBase
 
                     if (TokenStore.TransVNP.ContainsKey(companyId))
                     {
+                        //update
+                        var data = new UpdatePaymentStatusRequest()
+                        {
+                            Amount = float.Parse(request.Amount),
+                            BillNumber = request.TxnId
+                        };
+                        Utils.SendNotiPayment(client, data, url);
+
                     }
                 }
                 catch (FormatException fmEx)
@@ -163,7 +194,6 @@ public class VnPayController : ControllerBase
                             Amount = float.Parse(request.Amount),
                             BillNumber = request.TxnId
                         };
-                        var url = _configDbContext.PaymentConfigs.Where(x => x.PaymentType.Equals(Constants.VNPAY) && x.Merchant.Equals(request.MerchantCode) && x.AccessCode.Equals(request.TerminalId)).Select(x => x.UrlCreateQR).FirstOrDefault();
                         Utils.SendNotiPayment(client, data, url);
                     }
                     else
@@ -209,13 +239,6 @@ public class VnPayController : ControllerBase
                     });
                 }
             }
-
-            return Ok(new MerchantResponse
-            {
-                Code = "00",
-                Message = "Success",
-                TxnData = new TxnData { TxnId = request.TxnId }
-            });
         }
         catch (Exception ex)
         {
@@ -227,6 +250,15 @@ public class VnPayController : ControllerBase
                 TxnData = new TxnData { TxnId = request.TxnId }
             });
         }
+
+        return Ok(new MerchantResponse
+        {
+            Code = "00",
+            Message = "Success",
+            TxnData = new TxnData { TxnId = request.TxnId }
+        });
+        //FileHelper.WriteLog("", "RES " + JsonConvert.SerializeObject(res), "LogUpdateTrans", "LogUpdateTrans", true);
+
     }
 
     private void GetToken(PaymentConfig config)

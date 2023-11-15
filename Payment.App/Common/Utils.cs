@@ -150,6 +150,11 @@ public class Utils
 
     public static string GetPlatformFromUserAgent(string userAgent)
     {
+        if(userAgent == null)
+        {
+            return "null";
+        }
+
         if (userAgent.Contains("Windows"))
         {
             Regex regex = new Regex(@"(WOW64|Win64|amd64|x64)");
@@ -179,6 +184,7 @@ public class Utils
         {
             return "iOS";
         }
+
 
         return "Unknown";
     }

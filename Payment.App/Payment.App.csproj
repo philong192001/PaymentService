@@ -18,7 +18,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="LoggingFiles\**" />
+    <Content Remove="LoggingFiles\**" />
+    <EmbeddedResource Remove="LoggingFiles\**" />
+    <None Remove="LoggingFiles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.23" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Serilog" Version="3.1.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.0.2" />
     <PackageReference Include="SkiaSharp" Version="2.88.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
