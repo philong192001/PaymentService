@@ -3,9 +3,10 @@
 namespace Payment.App.DTOs;
 
 public class ResponseAppDTO<T>
-{/// <summary>
- /// mã lỗi
- /// </summary>
+{
+    /// <summary>
+    /// mã lỗi
+    /// </summary>
     [JsonPropertyName("ErrorCode")]
     public ErrorCodeEnum ErrorCode { get; set; } = ErrorCodeEnum.Success;
 

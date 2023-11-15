@@ -1,0 +1,378 @@
+2023-11-15 16:28:34.704 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:28:34.734 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:28:34.737 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:28:34.737 +07:00  INF  Hosting environment: Development
+2023-11-15 16:28:34.737 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:28:35.188 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:28:35.339 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 153.8414ms
+2023-11-15 16:28:35.352 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:28:35.588 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 235.5211ms
+2023-11-15 16:28:35.593 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:28:35.593 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:28:35.593 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:28:35.593 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:28:35.597 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 3.7391ms
+2023-11-15 16:28:35.657 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:28:35.663 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:28:35.663 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:28:35.663 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 69.7731ms
+2023-11-15 16:28:35.663 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 70.4125ms
+2023-11-15 16:28:35.676 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:28:35.676 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 83.1844ms
+2023-11-15 16:28:35.705 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 47.8835ms
+2023-11-15 16:28:35.852 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:28:36.018 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 166.0361ms
+2023-11-15 16:28:59.887 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:28:59.894 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:28:59.898 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:28:59.915 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:29:47.672 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:29:47.702 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:29:47.704 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:29:47.705 +07:00  INF  Hosting environment: Development
+2023-11-15 16:29:47.705 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:29:48.090 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:29:48.206 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 119.1612ms
+2023-11-15 16:29:48.217 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:29:48.378 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 160.6983ms
+2023-11-15 16:29:48.392 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:29:48.392 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:29:48.392 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:29:48.392 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:29:48.398 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 5.4195ms
+2023-11-15 16:29:48.442 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:29:48.442 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:29:48.442 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:29:48.442 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 49.6315ms
+2023-11-15 16:29:48.442 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 49.8118ms
+2023-11-15 16:29:48.442 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 49.9928ms
+2023-11-15 16:29:48.458 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:29:48.486 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 27.6516ms
+2023-11-15 16:29:48.643 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:29:48.788 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 145.5440ms
+2023-11-15 16:29:57.742 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:29:57.751 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:29:57.755 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:29:57.772 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:30:34.049 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:30:34.080 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:30:34.082 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:30:34.083 +07:00  INF  Hosting environment: Development
+2023-11-15 16:30:34.083 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:30:34.492 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:30:34.604 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 114.8817ms
+2023-11-15 16:30:34.614 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:30:34.790 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 175.9908ms
+2023-11-15 16:30:34.795 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:30:34.799 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:30:34.799 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:30:34.800 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:30:34.803 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 3.7613ms
+2023-11-15 16:30:34.854 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:30:34.854 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:30:34.854 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:30:34.854 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 54.4580ms
+2023-11-15 16:30:34.854 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 59.1603ms
+2023-11-15 16:30:34.854 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 54.4800ms
+2023-11-15 16:30:34.865 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:30:34.897 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.5281ms
+2023-11-15 16:30:35.067 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:30:35.248 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 180.3689ms
+2023-11-15 16:30:41.248 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:30:41.263 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:30:41.268 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:30:41.285 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:31:04.329 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:31:04.346 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 17.4280ms
+2023-11-15 16:31:04.405 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:31:04.407 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:31:04.410 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:31:04.411 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 0.5619ms
+2023-11-15 16:31:04.414 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:31:04.414 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 8.7356ms
+2023-11-15 16:31:04.423 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.6783ms
+2023-11-15 16:31:04.537 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:31:04.543 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 5.5371ms
+2023-11-15 16:31:04.577 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/favicon-32x32.png - -
+2023-11-15 16:31:04.577 +07:00  INF  Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-11-15 16:31:04.577 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/favicon-32x32.png - - - 200 628 image/png 0.6207ms
+2023-11-15 16:31:09.817 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:31:09.819 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:31:09.819 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:31:09.819 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:31:21.592 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:31:21.635 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:31:21.639 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:31:21.639 +07:00  INF  Hosting environment: Development
+2023-11-15 16:31:21.639 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:31:22.090 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:31:22.225 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 139.1406ms
+2023-11-15 16:31:22.242 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:31:22.408 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:31:22.408 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:31:22.408 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:31:22.408 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:31:22.412 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 170.0225ms
+2023-11-15 16:31:22.412 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 3.9064ms
+2023-11-15 16:31:22.470 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:31:22.470 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:31:22.470 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:31:22.470 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 61.4664ms
+2023-11-15 16:31:22.470 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 61.6113ms
+2023-11-15 16:31:22.470 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 61.5067ms
+2023-11-15 16:31:22.492 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:31:22.522 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 30.1442ms
+2023-11-15 16:31:22.683 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:31:22.862 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 178.5946ms
+2023-11-15 16:31:37.122 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 104
+2023-11-15 16:31:37.129 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:31:37.132 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:31:37.150 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:31:52.895 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:31:52.924 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 28.8054ms
+2023-11-15 16:31:52.955 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:31:52.955 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:31:52.956 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:31:52.956 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 0.4692ms
+2023-11-15 16:31:52.959 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:31:52.959 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 3.9480ms
+2023-11-15 16:31:52.976 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.0450ms
+2023-11-15 16:31:53.170 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:31:53.177 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 7.2144ms
+2023-11-15 16:31:53.244 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/favicon-32x32.png - -
+2023-11-15 16:31:53.244 +07:00  INF  Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-11-15 16:31:53.244 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/favicon-32x32.png - - - 200 628 image/png 0.6968ms
+2023-11-15 16:31:58.717 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 0
+2023-11-15 16:31:58.719 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:31:58.719 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:31:58.719 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:31:58.744 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-11-15 16:31:58.756 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 26.6709ms
+2023-11-15 16:31:58.760 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:31:58.763 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 0 - 400 - application/problem+json;+charset=utf-8 45.4240ms
+2023-11-15 16:32:02.187 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 0
+2023-11-15 16:32:02.189 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:32:02.189 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:32:02.189 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:32:02.197 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-11-15 16:32:02.197 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 7.8394ms
+2023-11-15 16:32:02.197 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:32:02.198 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 0 - 400 - application/problem+json;+charset=utf-8 10.5280ms
+2023-11-15 16:32:09.838 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:32:09.838 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:32:09.838 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:32:09.838 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:32:46.660 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:32:46.723 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:32:46.727 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:32:46.727 +07:00  INF  Hosting environment: Development
+2023-11-15 16:32:46.727 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:32:47.446 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:32:47.583 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 138.3546ms
+2023-11-15 16:32:47.601 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:32:47.799 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 198.2222ms
+2023-11-15 16:32:47.807 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:32:47.807 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:32:47.807 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:32:47.808 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:32:47.812 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 4.9392ms
+2023-11-15 16:32:47.873 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:32:47.873 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:32:47.873 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:32:47.874 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 66.3404ms
+2023-11-15 16:32:47.874 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 66.6387ms
+2023-11-15 16:32:47.874 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 66.3400ms
+2023-11-15 16:32:47.885 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:32:47.912 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 26.5232ms
+2023-11-15 16:32:48.081 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:32:48.278 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 197.0077ms
+2023-11-15 16:33:54.579 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:33:54.592 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:33:54.595 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:33:54.614 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:34:57.061 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:34:57.108 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:34:57.112 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:34:57.112 +07:00  INF  Hosting environment: Development
+2023-11-15 16:34:57.112 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:34:57.927 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:34:58.086 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 160.6925ms
+2023-11-15 16:34:58.098 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:34:58.400 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:34:58.400 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:34:58.436 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:34:58.445 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:34:58.451 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 352.6575ms
+2023-11-15 16:34:58.499 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:34:58.500 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 54.5398ms
+2023-11-15 16:34:58.551 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:34:58.551 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:34:58.553 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 153.3005ms
+2023-11-15 16:34:58.553 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 118.5836ms
+2023-11-15 16:34:58.558 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:34:58.558 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 158.5762ms
+2023-11-15 16:34:58.589 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 90.1704ms
+2023-11-15 16:34:58.806 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:34:59.041 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 235.1401ms
+2023-11-15 16:35:22.751 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:35:22.758 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:35:22.761 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:35:22.779 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:36:07.539 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:36:07.577 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 38.4669ms
+2023-11-15 16:36:07.626 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:36:07.627 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:36:07.627 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:36:07.627 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 0.2619ms
+2023-11-15 16:36:07.640 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:36:07.640 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 13.9437ms
+2023-11-15 16:36:07.671 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.5416ms
+2023-11-15 16:36:07.688 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:36:07.700 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:36:07.700 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 12.3810ms
+2023-11-15 16:36:07.811 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:36:07.816 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:36:07.816 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 4.6572ms
+2023-11-15 16:36:07.906 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:36:07.921 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.6027ms
+2023-11-15 16:36:07.928 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/favicon-32x32.png - -
+2023-11-15 16:36:07.928 +07:00  INF  Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-11-15 16:36:07.928 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/favicon-32x32.png - - - 200 628 image/png 0.6567ms
+2023-11-15 16:36:35.063 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:36:35.094 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:36:35.097 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:36:35.097 +07:00  INF  Hosting environment: Development
+2023-11-15 16:36:35.097 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:36:35.498 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:36:35.627 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 131.5029ms
+2023-11-15 16:36:35.643 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:36:35.817 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 174.5719ms
+2023-11-15 16:36:35.822 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:36:35.822 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:36:35.822 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:36:35.822 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:36:35.826 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 3.9242ms
+2023-11-15 16:36:35.873 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:36:35.873 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:36:35.873 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:36:35.873 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 51.5972ms
+2023-11-15 16:36:35.873 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 51.2955ms
+2023-11-15 16:36:35.873 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 51.3622ms
+2023-11-15 16:36:35.887 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:36:35.912 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.3442ms
+2023-11-15 16:36:36.063 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:36:36.202 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 138.9670ms
+2023-11-15 16:36:41.446 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:36:41.455 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:36:41.458 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:36:41.475 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:37:09.840 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:37:09.878 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:37:09.880 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:37:09.881 +07:00  INF  Hosting environment: Development
+2023-11-15 16:37:09.881 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:37:10.194 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:37:10.363 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 176.4056ms
+2023-11-15 16:37:10.376 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:37:10.651 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 274.8252ms
+2023-11-15 16:37:10.657 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:37:10.658 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:37:10.658 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:37:10.658 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:37:10.662 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 4.3146ms
+2023-11-15 16:37:10.712 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:37:10.712 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:37:10.712 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:37:10.712 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 54.8538ms
+2023-11-15 16:37:10.712 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 54.7608ms
+2023-11-15 16:37:10.712 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 55.1671ms
+2023-11-15 16:37:10.723 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:37:10.748 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 24.3750ms
+2023-11-15 16:37:10.898 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:37:11.044 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 146.9438ms
+2023-11-15 16:37:14.635 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:37:14.657 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:37:14.659 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:37:14.660 +07:00  INF  Hosting environment: Development
+2023-11-15 16:37:14.660 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:37:15.115 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:37:15.184 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 71.1556ms
+2023-11-15 16:37:15.195 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:37:15.291 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 95.7835ms
+2023-11-15 16:37:15.295 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:37:15.295 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:37:15.295 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:37:15.295 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:37:15.296 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 1.8442ms
+2023-11-15 16:37:15.308 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:37:15.308 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:37:15.310 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 15.0863ms
+2023-11-15 16:37:15.310 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 15.1771ms
+2023-11-15 16:37:15.311 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:37:15.311 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 16.4761ms
+2023-11-15 16:37:15.353 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:37:15.367 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 14.0300ms
+2023-11-15 16:37:15.524 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:37:15.620 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 95.9227ms
+2023-11-15 16:37:27.549 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:37:27.553 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:37:27.555 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:37:27.571 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:38:52.274 +07:00  INF  Request starting HTTP/1.1 POST https://localhost:7116/api/OnePay/GetQR application/json 148
+2023-11-15 16:38:52.275 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:38:52.276 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:38:56.633 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:38:56.669 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:38:56.673 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:38:56.674 +07:00  INF  Hosting environment: Development
+2023-11-15 16:38:56.674 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:38:57.045 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:38:57.208 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 166.2920ms
+2023-11-15 16:38:57.219 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:38:57.398 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 178.5366ms
+2023-11-15 16:38:57.402 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:38:57.402 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:38:57.407 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:38:57.407 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:38:57.412 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 4.6298ms
+2023-11-15 16:38:57.468 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:38:57.468 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:38:57.468 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:38:57.468 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 60.8454ms
+2023-11-15 16:38:57.468 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 65.4880ms
+2023-11-15 16:38:57.468 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 66.1629ms
+2023-11-15 16:38:57.482 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:38:57.514 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 32.3096ms
+2023-11-15 16:38:57.687 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:38:57.850 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 163.1011ms
+2023-11-15 16:39:42.595 +07:00  INF  Request starting HTTP/1.1 POST https://localhost:7116/api/OnePay/GetQR application/json 148
+2023-11-15 16:39:42.602 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:39:42.619 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-15 16:41:51.078 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-15 16:41:51.116 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-15 16:41:51.119 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-15 16:41:51.120 +07:00  INF  Hosting environment: Development
+2023-11-15 16:41:51.120 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-15 16:41:51.610 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger - -
+2023-11-15 16:41:51.792 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger - - - 301 0 - 189.6616ms
+2023-11-15 16:41:51.803 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-15 16:41:51.998 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 195.7619ms
+2023-11-15 16:41:52.005 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - -
+2023-11-15 16:41:52.005 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-11-15 16:41:52.005 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-11-15 16:41:52.005 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-15 16:41:52.011 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 5.7741ms
+2023-11-15 16:41:52.071 +07:00  INF  Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-11-15 16:41:52.071 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-11-15 16:41:52.071 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-11-15 16:41:52.071 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui.css - - - 200 144929 text/css 66.4589ms
+2023-11-15 16:41:52.071 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 66.0458ms
+2023-11-15 16:41:52.071 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 66.1667ms
+2023-11-15 16:41:52.095 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-15 16:41:52.124 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 28.9096ms
+2023-11-15 16:41:52.326 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-15 16:41:52.473 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 146.5659ms
+2023-11-15 16:41:58.878 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 142
+2023-11-15 16:41:58.885 +07:00  INF  No CORS policy found for the specified request.
+2023-11-15 16:41:58.889 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-15 16:41:58.908 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
