@@ -105,7 +105,6 @@ public class OnePayController : ControllerBase
         try
         {
             _logger.LogInformation($"CreateQR : param {onePayRequest.ToString()}");
-            onePayRequest.Amount = onePayRequest.Amount + "00";
             var res = new ResponseAppDTO<string>();
             if (onePayRequest == null)
             {

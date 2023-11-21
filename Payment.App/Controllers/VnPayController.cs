@@ -57,10 +57,10 @@ public class VnPayController : ControllerBase
             string queryString = $"?Amount={payQrRequest.Amount}&MerchantCode={config.Merchant}&ImageFormat={Constants.IMAGE_FORMAT}" +
                 $"&ImageType={Constants.IMAGE_TYPE}&TerminalID={config.AccessCode}&Height={Constants.HEIGHT}" +
                 $"&Width={Constants.WIDTH}&BillNumber={payQrRequest.BookId}";
-            //response từ API
-            var response = client.GetAsync(queryString).Result;
             // Thêm thông tin xác thực vào header "Authorization"
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", TokenStore.TokenVNP[Constants.KEY_TOKEN_DIC]);
+            //response từ API
+            var response = client.GetAsync(queryString).Result;
             // Kiểm tra mã trạng thái của res API
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {

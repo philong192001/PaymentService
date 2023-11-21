@@ -6,14 +6,16 @@ public class OnePayRequest
     /// Tổng số tiền cần thanh toán (2 số cuối phải là số 0)
     /// <example> 1353500</example>>
     /// </summary>
-    public string Amount
+     public string Amount
     {
-        get { return Amount; }
+        get { return _amount; }
         set
         {
-            Amount = value.PadLeft(value.Length + 2, '0');
+            _amount = value.PadRight(value.Length + 2, '0');
         }
     }
+
+    private string _amount = string.Empty;
 
     /// <summary>
     /// ID Lái xe
