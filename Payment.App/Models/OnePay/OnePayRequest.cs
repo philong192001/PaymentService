@@ -1,4 +1,6 @@
-﻿namespace Payment.App.Models.OnePay;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Payment.App.Models.OnePay;
 
 public class OnePayRequest
 {
@@ -28,7 +30,7 @@ public class OnePayRequest
     public int CompanyId { get; set; }
 
     /// <summary>
-    /// Id chuyến
+    /// Id chuyến theo nguồn KH
     /// </summary>
     public string BookId { get; set; }
 
@@ -36,4 +38,9 @@ public class OnePayRequest
     /// Loại ví thanh toán 
     /// </summary>
     public PaymentType PaymentType { get; set; }
+
+    /// <summary>
+    /// Id chuyến theo lái xe
+    /// </summary>
+    public string TripId { get; set; }
 }

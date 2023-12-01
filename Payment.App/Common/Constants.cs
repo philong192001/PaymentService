@@ -25,18 +25,6 @@ public static class Constants
     public const string VPC_AGAIN_LINK = "https://bagps.com";
     public const string VPC_TITLE = "Thanh toán qua OnePay";
 
-    /// <summary>
-    /// định nghĩa OrderInfo để phục vụ update trans
-    /// </summary>
-    /// <param name="companyId"></param>
-    /// <param name="driverCode"></param>
-    /// <param name="paymentType"></param>
-    /// <returns></returns>
-    public static string OrderInfo(int companyId, string driverCode, int paymentType)
-    {
-        return $"{companyId}:{driverCode}:{paymentType}:{(int)TransType.Done}";
-    }
-
     //MOMO
     public const string URL_MOMO = "two";
 }

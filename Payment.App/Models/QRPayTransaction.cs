@@ -23,6 +23,10 @@ public class QRPayTransaction
     #endregion Khách hàng thanh toán tiền
 
     #region Lái xe đóng phí hàng tháng
+    /// <summary>
+    /// BKS lái xe (trường hợp nạp tiền vào ví lái xe)
+    /// </summary>
+    public string TripId { get; set; }
 
     /// <summary>
     /// BKS lái xe (trường hợp nạp tiền vào ví lái xe)
@@ -100,4 +104,14 @@ public class QRPayTransaction
     /// Trạng thái thanh toán
     /// </summary>
     public int? Status { get; set; }
+
+    /// <summary>
+    /// Nội dung thanh toán
+    /// </summary>
+    public string Message { get; set; }
+
+    /// <summary>
+    /// Mã lỗi
+    /// </summary>
+    public int? ErrorCode { get; set; }
 }

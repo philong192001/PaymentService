@@ -9,6 +9,7 @@ public class QRPayTransactionEntityTypeConfiguration : IEntityTypeConfiguration<
         builder.Property(p => p.TransId).HasColumnType("BIGINT");
         builder.Property(p => p.BookId).HasColumnType("uniqueidentifier");
         builder.Property(p => p.PartnerTransId).HasColumnType("NVARCHAR(200)");
+        builder.Property(p => p.TripId).HasColumnType("NVARCHAR(50)");
         builder.Property(p => p.VehiclePlate).HasColumnType("NVARCHAR(50)");
         builder.Property(p => p.PrivateCode).HasColumnType("NVARCHAR(50)");
         builder.Property(p => p.Amount).HasColumnType("FLOAT");
@@ -24,5 +25,7 @@ public class QRPayTransactionEntityTypeConfiguration : IEntityTypeConfiguration<
         builder.Property(p => p.QRCode).HasColumnType("NVARCHAR(200)");
         builder.Property(p => p.ExpiredFee).HasColumnType("DATETIME");
         builder.Property(p => p.Status).HasColumnType("INT");
+        builder.Property(p => p.Message).HasColumnType("NVARCHAR(500)");
+        builder.Property(p => p.ErrorCode).HasColumnType("INT");
     }
 }

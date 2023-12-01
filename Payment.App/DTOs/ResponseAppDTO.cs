@@ -25,7 +25,7 @@ public class ResponseAppDTO<T>
 
 public enum ErrorCodeEnum
 {
-    [Description("Thành công")]
+    [Description("Giao dịch thành công")]
     Success = 0,
 
     [Description("Lỗi: gửi tham số null")]
@@ -33,6 +33,12 @@ public enum ErrorCodeEnum
 
     [Description("Error")]
     Error = 2,
+
+    [Description("CompanyId chưa có cấu hình")]
+    CompanyNoData = 3,
+
+    [Description("Đường dẫn chứa ảnh QRCode không tồn tại")]
+    PathNotExist = 4,
 }
 
 

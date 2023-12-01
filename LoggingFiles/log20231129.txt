@@ -1,0 +1,638 @@
+2023-11-29 09:17:40.583 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-29 09:17:40.612 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-29 09:17:40.615 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-29 09:17:40.615 +07:00  INF  Hosting environment: Development
+2023-11-29 09:17:40.615 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-29 09:17:41.077 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-29 09:17:41.392 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-29 09:17:41.397 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 5.2899ms
+2023-11-29 09:17:41.397 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 322.9160ms
+2023-11-29 09:17:41.452 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-29 09:17:41.495 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.1337ms
+2023-11-29 09:17:41.588 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-29 09:17:41.722 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.4308ms
+2023-11-29 09:49:17.881 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 09:49:17.893 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 09:49:17.896 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:49:17.913 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 09:49:18.122 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 09:49:18.673 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 09:49:19.770 +07:00  INF  Executed DbCommand (63ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:49:19.898 +07:00  ERR  RES {"code":"09","message":"QR h\u1EBFt h\u1EA1n thanh to\u00E1n","data":{"txnId":null,"amount":"78520000"}}
+2023-11-29 09:49:20.032 +07:00  INF  Executed DbCommand (23ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 09:49:20.081 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 09:49:20.091 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 2170.9544ms
+2023-11-29 09:49:20.092 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:49:20.099 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 200 - application/json;+charset=utf-8 2217.4504ms
+2023-11-29 09:50:51.770 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 09:50:51.778 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 09:50:51.778 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:50:51.778 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 09:50:51.779 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 09:50:51.787 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 09:50:51.794 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:50:51.802 +07:00  INF  Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 09:50:51.872 +07:00  INF  Executed DbCommand (17ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 09:50:51.932 +07:00  INF  Executed DbCommand (16ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 09:50:52.245 +07:00  INF  Executed DbCommand (256ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:50:52.290 +07:00  INF  Executed DbCommand (12ms) [Parameters=[@p20='?' (DbType = Int64), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [Amount] = @p0, [BookId] = @p1, [CompanyId] = @p2, [CustomerName] = @p3, [DateCreateQR] = @p4, [DatePay] = @p5, [DriverCode] = @p6, [DriverName] = @p7, [ErrorCode] = @p8, [ExpiredFee] = @p9, [FeeMonth] = @p10, [Message] = @p11, [Mobile] = @p12, [PartnerTransId] = @p13, [PaymentType] = @p14, [PrivateCode] = @p15, [QRCode] = @p16, [Status] = @p17, [TripId] = @p18, [VehiclePlate] = @p19
+WHERE [TransId] = @p20;
+SELECT @@ROWCOUNT;
+2023-11-29 09:50:52.342 +07:00  ERR  Lỗi Update Tran VNPAY System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Payment.App.Controllers.VnPayController.MerchantPayment(MerchantRequest request) in D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\Controllers\VnPayController.cs:line 186
+2023-11-29 09:50:52.343 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 09:50:52.343 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 564.6486ms
+2023-11-29 09:50:52.343 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:50:52.343 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 400 - application/json;+charset=utf-8 572.7363ms
+2023-11-29 09:51:07.715 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 09:51:07.716 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 09:51:07.716 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:07.716 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 09:51:07.717 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 09:51:07.755 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 09:51:07.775 +07:00  INF  Executed DbCommand (15ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:07.786 +07:00  INF  Executed DbCommand (6ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:07.823 +07:00  INF  Executed DbCommand (13ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 09:51:07.834 +07:00  INF  Executed DbCommand (11ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 09:51:07.895 +07:00  INF  Executed DbCommand (18ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:07.935 +07:00  INF  Executed DbCommand (17ms) [Parameters=[@p20='?' (DbType = Int64), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [Amount] = @p0, [BookId] = @p1, [CompanyId] = @p2, [CustomerName] = @p3, [DateCreateQR] = @p4, [DatePay] = @p5, [DriverCode] = @p6, [DriverName] = @p7, [ErrorCode] = @p8, [ExpiredFee] = @p9, [FeeMonth] = @p10, [Message] = @p11, [Mobile] = @p12, [PartnerTransId] = @p13, [PaymentType] = @p14, [PrivateCode] = @p15, [QRCode] = @p16, [Status] = @p17, [TripId] = @p18, [VehiclePlate] = @p19
+WHERE [TransId] = @p20;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:07.958 +07:00  ERR  Lỗi Update Tran VNPAY System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Payment.App.Controllers.VnPayController.MerchantPayment(MerchantRequest request) in D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\Controllers\VnPayController.cs:line 186
+2023-11-29 09:51:07.959 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 09:51:07.959 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 243.2087ms
+2023-11-29 09:51:07.959 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:07.960 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 400 - application/json;+charset=utf-8 244.0754ms
+2023-11-29 09:51:14.592 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 09:51:14.592 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 09:51:14.592 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:14.592 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 09:51:14.593 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 09:51:14.593 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 09:51:14.597 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:14.607 +07:00  INF  Executed DbCommand (5ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:14.614 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 09:51:14.617 +07:00  INF  Executed DbCommand (2ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 09:51:14.645 +07:00  INF  Executed DbCommand (9ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:14.660 +07:00  INF  Executed DbCommand (8ms) [Parameters=[@p20='?' (DbType = Int64), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [Amount] = @p0, [BookId] = @p1, [CompanyId] = @p2, [CustomerName] = @p3, [DateCreateQR] = @p4, [DatePay] = @p5, [DriverCode] = @p6, [DriverName] = @p7, [ErrorCode] = @p8, [ExpiredFee] = @p9, [FeeMonth] = @p10, [Message] = @p11, [Mobile] = @p12, [PartnerTransId] = @p13, [PaymentType] = @p14, [PrivateCode] = @p15, [QRCode] = @p16, [Status] = @p17, [TripId] = @p18, [VehiclePlate] = @p19
+WHERE [TransId] = @p20;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:14.668 +07:00  ERR  Lỗi Update Tran VNPAY System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Payment.App.Controllers.VnPayController.MerchantPayment(MerchantRequest request) in D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\Controllers\VnPayController.cs:line 186
+2023-11-29 09:51:14.668 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 09:51:14.668 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 75.9664ms
+2023-11-29 09:51:14.668 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:14.669 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 400 - application/json;+charset=utf-8 76.4434ms
+2023-11-29 09:51:15.411 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 09:51:15.411 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 09:51:15.411 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:15.411 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 09:51:15.412 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 09:51:15.412 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 09:51:15.429 +07:00  INF  Executed DbCommand (17ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:15.468 +07:00  INF  Executed DbCommand (25ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:15.486 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 09:51:15.489 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 09:51:15.517 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:15.524 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@p20='?' (DbType = Int64), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [Amount] = @p0, [BookId] = @p1, [CompanyId] = @p2, [CustomerName] = @p3, [DateCreateQR] = @p4, [DatePay] = @p5, [DriverCode] = @p6, [DriverName] = @p7, [ErrorCode] = @p8, [ExpiredFee] = @p9, [FeeMonth] = @p10, [Message] = @p11, [Mobile] = @p12, [PartnerTransId] = @p13, [PaymentType] = @p14, [PrivateCode] = @p15, [QRCode] = @p16, [Status] = @p17, [TripId] = @p18, [VehiclePlate] = @p19
+WHERE [TransId] = @p20;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:15.527 +07:00  ERR  Lỗi Update Tran VNPAY System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Payment.App.Controllers.VnPayController.MerchantPayment(MerchantRequest request) in D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\Controllers\VnPayController.cs:line 186
+2023-11-29 09:51:15.527 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 09:51:15.527 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 115.973ms
+2023-11-29 09:51:15.527 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:15.527 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 400 - application/json;+charset=utf-8 116.3140ms
+2023-11-29 09:51:21.756 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 09:51:21.756 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 09:51:21.757 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:21.757 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 09:51:21.757 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 09:51:21.757 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 09:51:21.786 +07:00  INF  Executed DbCommand (29ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:21.825 +07:00  INF  Executed DbCommand (22ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:21.846 +07:00  INF  Executed DbCommand (11ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 09:51:21.852 +07:00  INF  Executed DbCommand (6ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 09:51:21.902 +07:00  INF  Executed DbCommand (18ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:21.941 +07:00  INF  Executed DbCommand (11ms) [Parameters=[@p20='?' (DbType = Int64), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [Amount] = @p0, [BookId] = @p1, [CompanyId] = @p2, [CustomerName] = @p3, [DateCreateQR] = @p4, [DatePay] = @p5, [DriverCode] = @p6, [DriverName] = @p7, [ErrorCode] = @p8, [ExpiredFee] = @p9, [FeeMonth] = @p10, [Message] = @p11, [Mobile] = @p12, [PartnerTransId] = @p13, [PaymentType] = @p14, [PrivateCode] = @p15, [QRCode] = @p16, [Status] = @p17, [TripId] = @p18, [VehiclePlate] = @p19
+WHERE [TransId] = @p20;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:21.954 +07:00  ERR  Lỗi Update Tran VNPAY System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Payment.App.Controllers.VnPayController.MerchantPayment(MerchantRequest request) in D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\Controllers\VnPayController.cs:line 186
+2023-11-29 09:51:21.955 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 09:51:21.955 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 198.2319ms
+2023-11-29 09:51:21.955 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:21.955 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 400 - application/json;+charset=utf-8 198.6531ms
+2023-11-29 09:51:30.761 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 09:51:30.761 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 09:51:30.761 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:30.761 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 09:51:30.762 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 09:51:30.762 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 09:51:30.766 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:30.773 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:30.782 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 09:51:30.785 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 09:51:30.814 +07:00  INF  Executed DbCommand (8ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 09:51:30.838 +07:00  INF  Executed DbCommand (14ms) [Parameters=[@p20='?' (DbType = Int64), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [Amount] = @p0, [BookId] = @p1, [CompanyId] = @p2, [CustomerName] = @p3, [DateCreateQR] = @p4, [DatePay] = @p5, [DriverCode] = @p6, [DriverName] = @p7, [ErrorCode] = @p8, [ExpiredFee] = @p9, [FeeMonth] = @p10, [Message] = @p11, [Mobile] = @p12, [PartnerTransId] = @p13, [PaymentType] = @p14, [PrivateCode] = @p15, [QRCode] = @p16, [Status] = @p17, [TripId] = @p18, [VehiclePlate] = @p19
+WHERE [TransId] = @p20;
+SELECT @@ROWCOUNT;
+2023-11-29 09:51:30.843 +07:00  ERR  Lỗi Update Tran VNPAY System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Payment.App.Controllers.VnPayController.MerchantPayment(MerchantRequest request) in D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\Controllers\VnPayController.cs:line 186
+2023-11-29 09:51:30.843 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 09:51:30.843 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 81.6131ms
+2023-11-29 09:51:30.843 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 09:51:30.843 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 400 - application/json;+charset=utf-8 82.0698ms
+2023-11-29 10:06:52.015 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-29 10:06:52.048 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-29 10:06:52.051 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-29 10:06:52.051 +07:00  INF  Hosting environment: Development
+2023-11-29 10:06:52.051 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-29 10:06:52.459 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-29 10:06:52.740 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 282.9265ms
+2023-11-29 10:06:52.754 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-29 10:06:52.759 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 4.5346ms
+2023-11-29 10:06:52.807 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-29 10:06:52.830 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.7830ms
+2023-11-29 10:06:52.949 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-29 10:06:53.091 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 141.8186ms
+2023-11-29 10:12:26.974 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 10:12:26.986 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:12:26.989 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 10:12:27.006 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 10:20:06.169 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168
+2023-11-29 10:20:06.198 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:20:06.199 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:20:06.201 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-29 10:20:06.202 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 10:20:06.746 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:20:06.746 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:20:07.504 +07:00  INF  Executed DbCommand (43ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-11-29 10:20:07.504 +07:00  INF  Executed DbCommand (52ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 10:20:07.637 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:20:07.639 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:20:07.734 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 10:20:07.776 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 10:20:07.796 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 10:20:07.828 +07:00  INF  Executed DbCommand (9ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 10:20:07.840 +07:00  INF  Executed DbCommand (6ms) [Parameters=[@p20='?' (DbType = Int64), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [Amount] = @p0, [BookId] = @p1, [CompanyId] = @p2, [CustomerName] = @p3, [DateCreateQR] = @p4, [DatePay] = @p5, [DriverCode] = @p6, [DriverName] = @p7, [ErrorCode] = @p8, [ExpiredFee] = @p9, [FeeMonth] = @p10, [Message] = @p11, [Mobile] = @p12, [PartnerTransId] = @p13, [PaymentType] = @p14, [PrivateCode] = @p15, [QRCode] = @p16, [Status] = @p17, [TripId] = @p18, [VehiclePlate] = @p19
+WHERE [TransId] = @p20;
+SELECT @@ROWCOUNT;
+2023-11-29 10:20:07.870 +07:00  ERR  Lỗi Update Tran VNPAY System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Payment.App.Controllers.VnPayController.MerchantPayment(MerchantRequest request) in D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\Controllers\VnPayController.cs:line 186
+2023-11-29 10:20:07.873 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 10:20:07.884 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 460869.9707ms
+2023-11-29 10:20:07.885 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 10:20:07.892 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 400 - application/json;+charset=utf-8 460917.5626ms
+2023-11-29 10:20:07.916 +07:00  INF  Received HTTP response headers after 273.3879ms - 200
+2023-11-29 10:20:07.917 +07:00  INF  End processing HTTP request after 284.7176ms - 200
+2023-11-29 10:20:07.925 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-WDUKLHNU4P4XPLN9/qrs"
+2023-11-29 10:20:07.925 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-WDUKLHNU4P4XPLN9/qrs"
+2023-11-29 10:20:08.045 +07:00  INF  Received HTTP response headers after 120.1081ms - 201
+2023-11-29 10:20:08.045 +07:00  INF  End processing HTTP request after 120.3894ms - 201
+2023-11-29 10:20:08.100 +07:00  INF   Value ID : INV-WDUKLHNU4P4XPLN9 -- pathImage : Could not find a part of the path 'E:\Softwares\StaxiBackup\126.G7Taxi\WebManager\Media\Uploads\Qrcode\'. -- Query : ?id=INV-WDUKLHNU4P4XPLN9&locale=vi
+2023-11-29 10:20:08.155 +07:00  INF  Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [QRPay.Transaction] ([Amount], [BookId], [CompanyId], [CustomerName], [DateCreateQR], [DatePay], [DriverCode], [DriverName], [ErrorCode], [ExpiredFee], [FeeMonth], [Message], [Mobile], [PartnerTransId], [PaymentType], [PrivateCode], [QRCode], [Status], [TripId], [VehiclePlate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+SELECT [TransId]
+FROM [QRPay.Transaction]
+WHERE @@ROWCOUNT = 1 AND [TransId] = scope_identity();
+2023-11-29 10:20:08.185 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-29 10:20:08.193 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 1992.5996ms
+2023-11-29 10:20:08.193 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:20:08.193 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168 - 200 - application/json;+charset=utf-8 2026.1785ms
+2023-11-29 10:20:31.963 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168
+2023-11-29 10:20:31.971 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:20:31.971 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:20:31.971 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-29 10:20:32.014 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:20:32.025 +07:00  INF  Executed DbCommand (5ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-11-29 10:20:32.025 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:20:32.025 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:20:32.278 +07:00  INF  Received HTTP response headers after 253.4026ms - 200
+2023-11-29 10:20:32.279 +07:00  INF  End processing HTTP request after 253.6613ms - 200
+2023-11-29 10:20:32.287 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-WUN7CYX2C8TAEE7P/qrs"
+2023-11-29 10:20:32.287 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-WUN7CYX2C8TAEE7P/qrs"
+2023-11-29 10:20:32.320 +07:00  INF  Received HTTP response headers after 32.8982ms - 201
+2023-11-29 10:20:32.320 +07:00  INF  End processing HTTP request after 33.1048ms - 201
+2023-11-29 10:20:32.349 +07:00  INF   Value ID : INV-WUN7CYX2C8TAEE7P -- pathImage : Could not find a part of the path 'E:\Softwares\StaxiBackup\126.G7Taxi\WebManager\Media\Uploads\Qrcode\'. -- Query : ?id=INV-WUN7CYX2C8TAEE7P&locale=vi
+2023-11-29 10:20:32.356 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [QRPay.Transaction] ([Amount], [BookId], [CompanyId], [CustomerName], [DateCreateQR], [DatePay], [DriverCode], [DriverName], [ErrorCode], [ExpiredFee], [FeeMonth], [Message], [Mobile], [PartnerTransId], [PaymentType], [PrivateCode], [QRCode], [Status], [TripId], [VehiclePlate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+SELECT [TransId]
+FROM [QRPay.Transaction]
+WHERE @@ROWCOUNT = 1 AND [TransId] = scope_identity();
+2023-11-29 10:20:32.361 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-29 10:20:32.361 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 389.9473ms
+2023-11-29 10:20:32.361 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:20:32.362 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168 - 200 - application/json;+charset=utf-8 398.5577ms
+2023-11-29 10:20:34.047 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168
+2023-11-29 10:20:34.047 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:20:34.047 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:20:34.047 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-29 10:20:34.047 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:20:34.062 +07:00  INF  Executed DbCommand (14ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-11-29 10:20:34.062 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:20:34.062 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:20:34.265 +07:00  INF  Received HTTP response headers after 203.0838ms - 200
+2023-11-29 10:20:34.266 +07:00  INF  End processing HTTP request after 203.3067ms - 200
+2023-11-29 10:20:34.269 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-V7MGCHWMBNPEA9ZH/qrs"
+2023-11-29 10:20:34.269 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-V7MGCHWMBNPEA9ZH/qrs"
+2023-11-29 10:20:34.397 +07:00  INF  Received HTTP response headers after 127.895ms - 201
+2023-11-29 10:20:34.397 +07:00  INF  End processing HTTP request after 128.067ms - 201
+2023-11-29 10:20:34.423 +07:00  INF   Value ID : INV-V7MGCHWMBNPEA9ZH -- pathImage : Could not find a part of the path 'E:\Softwares\StaxiBackup\126.G7Taxi\WebManager\Media\Uploads\Qrcode\'. -- Query : ?id=INV-V7MGCHWMBNPEA9ZH&locale=vi
+2023-11-29 10:20:34.432 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [QRPay.Transaction] ([Amount], [BookId], [CompanyId], [CustomerName], [DateCreateQR], [DatePay], [DriverCode], [DriverName], [ErrorCode], [ExpiredFee], [FeeMonth], [Message], [Mobile], [PartnerTransId], [PaymentType], [PrivateCode], [QRCode], [Status], [TripId], [VehiclePlate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+SELECT [TransId]
+FROM [QRPay.Transaction]
+WHERE @@ROWCOUNT = 1 AND [TransId] = scope_identity();
+2023-11-29 10:20:34.437 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-29 10:20:34.437 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 390.054ms
+2023-11-29 10:20:34.437 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:20:34.437 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168 - 200 - application/json;+charset=utf-8 390.6201ms
+2023-11-29 10:20:35.123 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168
+2023-11-29 10:20:35.123 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:20:35.123 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:20:35.123 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-29 10:20:35.124 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:20:35.129 +07:00  INF  Executed DbCommand (5ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-11-29 10:20:35.130 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:20:35.130 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:20:35.199 +07:00  INF  Received HTTP response headers after 68.4804ms - 200
+2023-11-29 10:20:35.199 +07:00  INF  End processing HTTP request after 68.7224ms - 200
+2023-11-29 10:20:35.200 +07:00  INF  Executing NotFoundObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-29 10:20:35.200 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 76.9258ms
+2023-11-29 10:20:35.200 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:20:35.200 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168 - 404 - application/json;+charset=utf-8 77.5158ms
+2023-11-29 10:21:06.416 +07:00  INF  Now listening on: https://localhost:7116
+2023-11-29 10:21:06.446 +07:00  INF  Now listening on: http://localhost:5271
+2023-11-29 10:21:06.449 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-11-29 10:21:06.449 +07:00  INF  Hosting environment: Development
+2023-11-29 10:21:06.449 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-11-29 10:21:06.917 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-11-29 10:21:07.186 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 271.3630ms
+2023-11-29 10:21:07.199 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-11-29 10:21:07.204 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 5.0208ms
+2023-11-29 10:21:07.255 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-11-29 10:21:07.278 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 23.1734ms
+2023-11-29 10:21:07.394 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-11-29 10:21:07.536 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 141.8957ms
+2023-11-29 10:21:15.310 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168
+2023-11-29 10:21:15.318 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:21:15.320 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:21:15.338 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-29 10:21:16.084 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:21:16.888 +07:00  INF  Executed DbCommand (58ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-11-29 10:21:17.016 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:21:17.017 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:21:17.220 +07:00  INF  Received HTTP response headers after 196.8559ms - 200
+2023-11-29 10:21:17.223 +07:00  INF  End processing HTTP request after 211.8748ms - 200
+2023-11-29 10:21:17.238 +07:00  INF  Executing NotFoundObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-29 10:21:17.251 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 1908.2633ms
+2023-11-29 10:21:17.251 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:21:17.258 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168 - 404 - application/json;+charset=utf-8 1948.4445ms
+2023-11-29 10:21:24.618 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168
+2023-11-29 10:21:24.620 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:21:24.620 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:21:24.620 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-29 10:21:24.622 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:21:24.638 +07:00  INF  Executed DbCommand (6ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-11-29 10:21:24.639 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:21:24.639 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:21:24.718 +07:00  INF  Received HTTP response headers after 79.7146ms - 200
+2023-11-29 10:21:24.718 +07:00  INF  End processing HTTP request after 79.9391ms - 200
+2023-11-29 10:21:24.725 +07:00  INF  Executing NotFoundObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-29 10:21:24.725 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 104.6036ms
+2023-11-29 10:21:24.725 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:21:24.725 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168 - 404 - application/json;+charset=utf-8 106.8303ms
+2023-11-29 10:22:13.541 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168
+2023-11-29 10:22:13.544 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:22:13.545 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:22:13.546 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-11-29 10:22:13.591 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:22:13.600 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-11-29 10:22:13.601 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:22:13.601 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-11-29 10:22:13.743 +07:00  INF  Received HTTP response headers after 142.2363ms - 200
+2023-11-29 10:22:13.743 +07:00  INF  End processing HTTP request after 142.409ms - 200
+2023-11-29 10:22:13.747 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-BX4CVMVNTUHDVHFQ/qrs"
+2023-11-29 10:22:13.747 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-BX4CVMVNTUHDVHFQ/qrs"
+2023-11-29 10:22:13.837 +07:00  INF  Received HTTP response headers after 90.0511ms - 201
+2023-11-29 10:22:13.837 +07:00  INF  End processing HTTP request after 90.3566ms - 201
+2023-11-29 10:22:13.906 +07:00  INF   Value ID : INV-BX4CVMVNTUHDVHFQ -- pathImage : Could not find a part of the path 'E:\Softwares\StaxiBackup\126.G7Taxi\WebManager\Media\Uploads\Qrcode\'. -- Query : ?id=INV-BX4CVMVNTUHDVHFQ&locale=vi
+2023-11-29 10:22:14.085 +07:00  INF  Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [QRPay.Transaction] ([Amount], [BookId], [CompanyId], [CustomerName], [DateCreateQR], [DatePay], [DriverCode], [DriverName], [ErrorCode], [ExpiredFee], [FeeMonth], [Message], [Mobile], [PartnerTransId], [PaymentType], [PrivateCode], [QRCode], [Status], [TripId], [VehiclePlate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+SELECT [TransId]
+FROM [QRPay.Transaction]
+WHERE @@ROWCOUNT = 1 AND [TransId] = scope_identity();
+2023-11-29 10:22:14.128 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-11-29 10:22:14.128 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 582.4249ms
+2023-11-29 10:22:14.128 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-11-29 10:22:14.128 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 168 - 200 - application/json;+charset=utf-8 587.7091ms
+2023-11-29 10:25:28.180 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510
+2023-11-29 10:25:28.180 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:25:28.180 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 10:25:28.186 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 10:25:39.496 +07:00  INF  Current Checksum a3d995d70e24f7351ea1aa6d4208226f FromString 00|1|1049|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 10:25:40.619 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:25:40.640 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 10:25:57.147 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 10:26:01.812 +07:00  INF  Executed DbCommand (17ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 10:26:06.164 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 10:38:36.051 +07:00  INF  Executed DbCommand (9ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 10:38:36.076 +07:00  INF  Executed DbCommand (8ms) [Parameters=[@p20='?' (DbType = Int64), @p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [Amount] = @p0, [BookId] = @p1, [CompanyId] = @p2, [CustomerName] = @p3, [DateCreateQR] = @p4, [DatePay] = @p5, [DriverCode] = @p6, [DriverName] = @p7, [ErrorCode] = @p8, [ExpiredFee] = @p9, [FeeMonth] = @p10, [Message] = @p11, [Mobile] = @p12, [PartnerTransId] = @p13, [PaymentType] = @p14, [PrivateCode] = @p15, [QRCode] = @p16, [Status] = @p17, [TripId] = @p18, [VehiclePlate] = @p19
+WHERE [TransId] = @p20;
+SELECT @@ROWCOUNT;
+2023-11-29 10:38:36.121 +07:00  ERR  Lỗi Update Tran VNPAY System.ArgumentOutOfRangeException: Index and length must refer to a location within the string. (Parameter 'length')
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at Payment.App.Controllers.VnPayController.MerchantPayment(MerchantRequest request) in D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\Controllers\VnPayController.cs:line 186
+2023-11-29 10:38:36.122 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 10:38:36.123 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 787937.0186ms
+2023-11-29 10:38:36.123 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 10:38:36.123 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 510 - 400 - application/json;+charset=utf-8 787944.0158ms
+2023-11-29 10:54:09.086 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 526
+2023-11-29 10:54:09.089 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:54:09.092 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 10:54:09.093 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 10:54:14.339 +07:00  INF  Current Checksum 941a44d2294310234098d9018f73eb87 FromString 00|1|10492311291054444264|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 10:54:16.107 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:54:16.137 +07:00  INF  Executed DbCommand (5ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 10:54:31.786 +07:00  ERR  RES {"code":"06","message":"Sai th\u00F4ng tin x\u00E1c th\u1EF1c","data":{"txnId":"10492311291054444264","amount":"78520000"}}
+2023-11-29 10:54:31.794 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 10:54:31.799 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 10:54:31.800 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 22706.3939ms
+2023-11-29 10:54:31.800 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 10:54:31.800 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 526 - 200 - application/json;+charset=utf-8 22714.0981ms
+2023-11-29 10:54:34.184 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 526
+2023-11-29 10:54:34.185 +07:00  INF  No CORS policy found for the specified request.
+2023-11-29 10:54:34.185 +07:00  INF  Executing endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 10:54:34.185 +07:00  INF  Route matched with {action = "MerchantPayment", controller = "VnPay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult MerchantPayment(Payment.App.Models.VnPay.MerchantRequest) on controller Payment.App.Controllers.VnPayController (Payment.App).
+2023-11-29 10:54:38.038 +07:00  INF  Current Checksum 941a44d2294310234098d9018f73eb87 FromString 00|1|10492311291054444264|000098469|VCB|0989511021|string|78520000|20180807164732|0102306702|cjNaVAhET34Oysae
+2023-11-29 10:54:39.728 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-11-29 10:54:39.742 +07:00  INF  Executed DbCommand (5ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 10:54:44.896 +07:00  INF  Executed DbCommand (2ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (DbType = Int32), @p1='?' (Size = 500)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [ErrorCode] = @p0, [Message] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 10:54:53.785 +07:00  INF  Executed DbCommand (19ms) [Parameters=[@__request_MerchantCode_0='?' (Size = 50), @__request_TerminalId_1='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[UrlCreateQR]
+FROM [QRPay.Terminals] AS [q]
+WHERE (([q].[PaymentType] = N'VNPay') AND ([q].[MasterMerchant] = @__request_MerchantCode_0)) AND ([q].[AccessCode] = @__request_TerminalId_1)
+2023-11-29 10:54:54.902 +07:00  INF  Executed DbCommand (11ms) [Parameters=[@__request_TerminalId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [QRPay.Terminals] AS [q]
+        WHERE [q].[TerminalCode] = @__request_TerminalId_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-29 10:55:18.787 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__request_TxnId_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[TransId], [q].[Amount], [q].[BookId], [q].[CompanyId], [q].[CustomerName], [q].[DateCreateQR], [q].[DatePay], [q].[DriverCode], [q].[DriverName], [q].[ErrorCode], [q].[ExpiredFee], [q].[FeeMonth], [q].[Message], [q].[Mobile], [q].[PartnerTransId], [q].[PaymentType], [q].[PrivateCode], [q].[QRCode], [q].[Status], [q].[TripId], [q].[VehiclePlate]
+FROM [QRPay.Transaction] AS [q]
+WHERE [q].[TripId] = @__request_TxnId_0
+2023-11-29 10:56:00.327 +07:00  INF  Start processing HTTP request POST "https://dev-qrtool.vnpaytest.vn/v2/api/gen"
+2023-11-29 10:56:00.328 +07:00  INF  Sending HTTP request POST "https://dev-qrtool.vnpaytest.vn/v2/api/gen"
+2023-11-29 10:56:00.675 +07:00  INF  Received HTTP response headers after 347.4212ms - 401
+2023-11-29 10:56:00.675 +07:00  INF  End processing HTTP request after 347.774ms - 401
+2023-11-29 10:56:02.242 +07:00  INF  Start processing HTTP request POST "https://dev-qrtool.vnpaytest.vn/v2/api/gen"
+2023-11-29 10:56:02.242 +07:00  INF  Sending HTTP request POST "https://dev-qrtool.vnpaytest.vn/v2/api/gen"
+2023-11-29 10:56:02.259 +07:00  INF  Received HTTP response headers after 16.7953ms - 401
+2023-11-29 10:56:02.259 +07:00  INF  End processing HTTP request after 17.2213ms - 401
+2023-11-29 10:56:04.248 +07:00  INF  Executed DbCommand (7ms) [Parameters=[@p2='?' (DbType = Int64), @p0='?' (Size = 200), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [QRPay.Transaction] SET [PartnerTransId] = @p0, [Status] = @p1
+WHERE [TransId] = @p2;
+SELECT @@ROWCOUNT;
+2023-11-29 10:56:06.203 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.Models.VnPay.MerchantResponse'.
+2023-11-29 10:56:06.204 +07:00  INF  Executed action Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App) in 92018.8071ms
+2023-11-29 10:56:06.204 +07:00  INF  Executed endpoint 'Payment.App.Controllers.VnPayController.MerchantPayment (Payment.App)'
+2023-11-29 10:56:06.204 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/VnPay/MerchantPayment application/json 526 - 200 - application/json;+charset=utf-8 92019.2153ms

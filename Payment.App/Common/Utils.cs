@@ -113,6 +113,13 @@ public class Utils
     {
         // Convert base 64 string to byte[]
         byte[] imageBytes = Convert.FromBase64String(base64String);
+
+        //Kiểm tra xem đường dẫn tồn tại chưa - nếu chưa có thì tạo mới 
+        if (!Directory.Exists(pathImage))
+        {
+            Directory.CreateDirectory(pathImage);
+        }
+
         // Convert byte[] to Image
         // Lưu byte array thành hình ảnh
         using (var stream = new MemoryStream(imageBytes))
@@ -232,19 +239,9 @@ public class Utils
         }
     }
 
-    public static void InsertTransaction(CreateTransactionDTO createTransactionDTO, PaymentDbContext paymentDbContext)
+    public static void InsertTransaction(QRPayTransaction qRPayTransaction, PaymentDbContext paymentDbContext)
     {
-        var transaction = new QRPayTransaction()
-        {
-            BookId = createTransactionDTO.BookId,
-            Amount = double.Parse(createTransactionDTO.Amount),
-            CompanyId = createTransactionDTO.CompanyId,
-            PaymentType = (int)createTransactionDTO.PaymentType,
-            QRCode = createTransactionDTO.PathQR,
-            DriverCode = createTransactionDTO.DriverId,
-            Status = (int)TransType.Wait
-        };
-        paymentDbContext.QRPayTransactions.Add(transaction);
+        paymentDbContext.QRPayTransactions.Add(qRPayTransaction);
         paymentDbContext.SaveChanges();
     }
 

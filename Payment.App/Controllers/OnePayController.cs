@@ -6,7 +6,6 @@ namespace Payment.App.Controllers;
 [ApiController]
 public class OnePayController : ControllerBase
 {
-    private readonly ConfigDbContext _configDbContext;
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly AppSetting _appSetting;
     private IHttpClientFactory _factory;
@@ -14,9 +13,8 @@ public class OnePayController : ControllerBase
     private readonly JsonSerializerOptions _jsonSerializerOptions;
     private readonly ILogger<OnePayController> _logger;
 
-    public OnePayController(IHttpClientFactory factory, AppSetting appSetting, IHttpContextAccessor httpContextAccessor, PaymentDbContext paymentDbContext, ConfigDbContext configDbContext, ILogger<OnePayController> logger)
+    public OnePayController(IHttpClientFactory factory, AppSetting appSetting, IHttpContextAccessor httpContextAccessor, PaymentDbContext paymentDbContext, ILogger<OnePayController> logger)
     {
-        _configDbContext = configDbContext;
         _httpContextAccessor = httpContextAccessor;
         _appSetting = appSetting;
         _factory = factory;
@@ -61,13 +59,13 @@ public class OnePayController : ControllerBase
 
             HttpClient client = _factory.CreateClient();
             //get config DB
-            var config = _configDbContext.PaymentConfigs.Where(x => x.CompanyId.Equals(onePayRequest.CompanyId) && x.PaymentType.Equals(onePayRequest.PaymentType)).FirstOrDefault();
-            var orderInfo = Constants.OrderInfo(onePayRequest.CompanyId, onePayRequest.DriverId, (int)onePayRequest.PaymentType);
+            var config = _paymentDbContext.QRPayTerminals.Where(x => x.CompanyId.Equals(onePayRequest.CompanyId) && x.PaymentType.Equals(onePayRequest.PaymentType)).FirstOrDefault();
+            var orderInfo = onePayRequest.BookId.Substring(0, Math.Min(onePayRequest.BookId.Length, 34));
             var ticketNo = onePayRequest.BookId.Substring(0, Math.Min(onePayRequest.BookId.Length, 15));
 
             var param = $"AgainLink={Constants.VPC_AGAIN_LINK}&Title={Constants.VPC_TITLE}&vpc_AccessCode={config.AccessCode}&vpc_Amount={onePayRequest.Amount}" +
                 $"&vpc_Command={Constants.VPC_COMMAND}&vpc_CreateToken=true&vpc_Currency={Constants.VPC_CURRENCY}&vpc_Customer_Id={onePayRequest.DriverId}" +
-                $"&vpc_Locale={Constants.VPC_LOCALE}&vpc_MerchTxnRef={EncryptionHelper.Encrypt(onePayRequest.Amount, onePayRequest.DriverId)}&vpc_Merchant={config.Merchant}" +
+                $"&vpc_Locale={Constants.VPC_LOCALE}&vpc_MerchTxnRef={EncryptionHelper.Encrypt(onePayRequest.Amount, onePayRequest.DriverId)}&vpc_Merchant={config.MasterMerchant}" +
                 $"&vpc_OrderInfo={orderInfo}&vpc_ReturnURL={Constants.VPC_RETURN_URL}&vpc_TicketNo={ticketNo}&vpc_Version={Constants.VPC_VERSION}";
 
             var vpc_SecureHash = Utils.SHA256OnePay(param, config.HashCode);
@@ -90,7 +88,8 @@ public class OnePayController : ControllerBase
     ///       "CompanyId": "49",
     ///       "PaymentType" : 0,
     ///       "DriverId" : "LPV2",
-    ///       "BookId" : "4C38D4C4-38F3-4725-A72F-2727F4398C96"
+    ///       "BookId" : "4C38D4C4-38F3-4725-A72F-2727F4398C96",
+    ///       "TripId" : "124423AA"
     ///     }
     /// </remarks>
     /// <param name="onePayRequest"></param>
@@ -104,24 +103,32 @@ public class OnePayController : ControllerBase
     {
         try
         {
-            _logger.LogInformation($"CreateQR : param {onePayRequest.ToString()}");
             var res = new ResponseAppDTO<string>();
+
+             //Request Null return 401
             if (onePayRequest == null)
             {
                 res.ErrorCode = ErrorCodeEnum.NullRequest;
-                res.Data = "";
                 res.Message = ErrorCodeEnum.NullRequest.GetDescription();
                 return NotFound(res);
             }
 
             HttpClient client = _factory.CreateClient();
-            var config = _configDbContext.PaymentConfigs.Where(x => x.CompanyId.Equals(onePayRequest.CompanyId) && x.PaymentType.Equals(onePayRequest.PaymentType.ToString())).FirstOrDefault();
+            var config = _paymentDbContext.QRPayTerminals.Where(x => x.CompanyId.Equals(onePayRequest.CompanyId) && x.PaymentType.Equals(onePayRequest.PaymentType.ToString())).FirstOrDefault();
+            // Cấu hình của companyId null
+            if(config == null)
+            {
+                res.ErrorCode = ErrorCodeEnum.CompanyNoData;
+                res.Message = ErrorCodeEnum.CompanyNoData.GetDescription();
+                return NotFound(res);
+            }
+            
             var merchTxtRef = EncryptionHelper.Encrypt(onePayRequest.Amount, onePayRequest.DriverId);
-            var orderInfo = Constants.OrderInfo(onePayRequest.CompanyId, onePayRequest.DriverId, (int)onePayRequest.PaymentType);
-            var ticketNo = onePayRequest.BookId.Substring(0, Math.Min(onePayRequest.BookId.Length, 14));
+            var orderInfo = onePayRequest.TripId;
+            var ticketNo = onePayRequest.BookId.Substring(0, Math.Min(onePayRequest.BookId.Length, 15));
 
             var param = $"vpc_AccessCode={config.AccessCode}&vpc_Amount={onePayRequest.Amount}&vpc_Command={Constants.VPC_COMMAND}" +
-                $"&vpc_Currency={Constants.VPC_CURRENCY}&vpc_Locale={Constants.VPC_LOCALE}&vpc_MerchTxnRef={merchTxtRef}&vpc_Merchant={config.Merchant}" +
+                $"&vpc_Currency={Constants.VPC_CURRENCY}&vpc_Locale={Constants.VPC_LOCALE}&vpc_MerchTxnRef={merchTxtRef}&vpc_Merchant={config.MasterMerchant}" +
                 $"&vpc_OrderInfo={orderInfo}&vpc_ReturnURL={Constants.VPC_RETURN_URL}&vpc_TicketNo={ticketNo}&vpc_Version={Constants.VPC_VERSION}";
 
             var vpc_SecureHash = Utils.SHA256OnePay(param, config.HashCode);
@@ -135,7 +142,7 @@ public class OnePayController : ControllerBase
                 { "vpc_Currency",Constants.VPC_CURRENCY},
                 { "vpc_Locale", Constants.VPC_LOCALE },
                 { "vpc_MerchTxnRef", merchTxtRef},
-                { "vpc_Merchant", config.Merchant },
+                { "vpc_Merchant", config.MasterMerchant },
                 { "vpc_OrderInfo",orderInfo },
                 { "vpc_ReturnURL", Constants.VPC_RETURN_URL },
                 { "vpc_TicketNo", ticketNo },
@@ -150,6 +157,7 @@ public class OnePayController : ControllerBase
 
             if (parsedQuery.Count == 0)
             {
+                Console.WriteLine(response.StatusCode + " 0000000000000000");
                 res.ErrorCode = ErrorCodeEnum.Error;
                 res.Data = "Request error, try again";
                 res.Message = ErrorCodeEnum.Error.GetDescription();
@@ -159,17 +167,25 @@ public class OnePayController : ControllerBase
             string valueId = parsedQuery["id"];
             //đường dẫn ảnh
             var pathImage = CreateQR(valueId, config).Result;
+            if(pathImage == null)
+            {
+                res.ErrorCode = ErrorCodeEnum.PathNotExist;
+                res.Message = ErrorCodeEnum.PathNotExist.GetDescription();
+                return NotFound(res);
+            }
             _logger.LogInformation($" Value ID : {valueId} -- pathImage : {pathImage} -- Query : {query}");
 
             //Tạo transaction để lưu dưới trạng thái đợi thanh toán
-            var trans = new CreateTransactionDTO()
+            var trans = new QRPayTransaction()
             {
-                Amount = onePayRequest.Amount,
-                DriverId = onePayRequest.DriverId,
+                Amount = double.Parse(onePayRequest.Amount),
+                DriverCode = onePayRequest.DriverId,
                 CompanyId = onePayRequest.CompanyId,
-                PaymentType = PaymentType.OnePay,
-                PathQR = pathImage,
+                PaymentType = (int)PaymentType.OnePay,
+                QRCode = pathImage,
                 BookId = new Guid(onePayRequest.BookId),
+                TripId = onePayRequest.TripId,
+                Status = (int)TransStateEnum.Wait
             };
             //Lưu transaction
             Utils.InsertTransaction(trans, _paymentDbContext);
@@ -195,10 +211,10 @@ public class OnePayController : ControllerBase
     ///         "vpc_CurrencyCode": "VND",
     ///         "vpc_MerchTxnRef": "string",
     ///         "vpc_Merchant": "TOKENONEPAY",
-    ///         "vpc_OrderInfo": "49:LPV234:0:0",
+    ///         "vpc_OrderInfo": "124423AA",
     ///         "vpc_Amount": "251000",
-    ///         "vpc_TxnResponseCode": "AAAAACV",
-    ///         "vpc_TransactionNo": "TETSONEPAYASFJNSF"
+    ///         "vpc_TxnResponseCode": "001",
+    ///         "vpc_TransactionNo": "TETSONEPASF"
     ///     }
     /// </remarks>
     /// <param name="notiOnepayRequest"></param>
@@ -206,49 +222,55 @@ public class OnePayController : ControllerBase
     /// <response code="200">Trả về response theo model</response>
     /// <response code="400">Log exception và response 400</response>
     [HttpPost("NotiPayment")]
-    [ProducesResponseType(typeof(OnePayRequest), 200)]
+    [ProducesResponseType(typeof(NotiOnepayRequest), 200)]
     [ProducesResponseType(400)]
     public IActionResult NotiPayment(NotiOnepayRequest notiOnepayRequest)
     {
         try
         {
             var res = new ResponseAppDTO<string>();
-
-            HttpClient client = _factory.CreateClient();
-            var url = _configDbContext.PaymentConfigs.Where(x => x.Merchant.Equals(notiOnepayRequest.vpc_Merchant) && x.PaymentType.Equals(Constants.ONEPAY)).Select(x => x.UrlCreateQR).FirstOrDefault();
-            string[] substrings = notiOnepayRequest.vpc_OrderInfo.Split(':');
-            string[] globalVariables = new string[substrings.Length];
-            for (int i = 0; i < substrings.Length; i++)
+            if(int.Parse(notiOnepayRequest.vpc_TxnResponseCode) == 0)
             {
-                globalVariables[i] = substrings[i];
+                HttpClient client = _factory.CreateClient();
+                //Lấy ra record trans đã lưu ở trạng thái đợi
+                var record = _paymentDbContext.QRPayTransactions.Where(x => x.TripId.Equals(notiOnepayRequest.vpc_OrderInfo) && x.Status == (int)TransStateEnum.Wait).FirstOrDefault();
+
+                //Kiểm tra nếu tiền trong DB không khớp với request thì return 400
+                if (record.Amount != double.Parse(notiOnepayRequest.vpc_Amount))
+                {
+                    res.ErrorCode = ErrorCodeEnum.Error;
+                    res.Data = "Số tiền từ request không khớp nhau";
+                    res.Message = ErrorCodeEnum.Error.GetDescription();
+                    return BadRequest(res);
+                }
+
+                var data = new UpdatePaymentStatusRequest()
+                {
+                    Amount = float.Parse(notiOnepayRequest.vpc_Amount),
+                    BillNumber = $"{(int)PayType.PayForTrip}{record.CompanyId.ToString().PadLeft(3, '0')}{DateTime.Now.ToString("yyMMddhhmmss")}{record.DriverCode[1]}"
+                };
+
+                //query lấy ra config 
+                var url = _paymentDbContext.QRPayTerminals.Where(x => x.MasterMerchant.Equals(notiOnepayRequest.vpc_Merchant) && x.PaymentType.Equals(Constants.ONEPAY)).Select(x => x.UrlCreateQR).FirstOrDefault();
+                //Call API HPGO thông báo trạng thái thanh toán
+                var response = Utils.SendNotiPayment(client, data, url);
+                //Tạo transaction để lưu dưới trạng thái thanh toán thành công
+                record.PartnerTransId = notiOnepayRequest.vpc_TransactionNo;
+                record.Status = (int)TransStateEnum.Success;
+                //Update trans thanh toán thành công vào DB
+                Utils.UpdateTransaction(record, _paymentDbContext);
+
+                res.Data = response;
+                return Ok(res);
             }
-
-            var data = new UpdatePaymentStatusRequest()
+            else
             {
-                Amount = float.Parse(notiOnepayRequest.vpc_Amount),
-                BillNumber = $"{(int)PayType.PayForTrip}{globalVariables[0].PadLeft(3, '0')}{DateTime.Now.ToString("yyMMddhhmmss")}{globalVariables[1]}"
-            };
-            //Call API HPGO thông báo trạng thái thanh toán
-            var response = Utils.SendNotiPayment(client, data, url);
-            //Lấy ra record trans đã lưu ở trạng thái đợi
-            var record = _paymentDbContext.QRPayTransactions.Where(x => x.CompanyId.Equals(int.Parse(globalVariables[0])) && x.DriverCode.Equals(globalVariables[1]) && x.PaymentType.Equals(int.Parse(globalVariables[2])) && x.Status.Equals(int.Parse(globalVariables[3]))).FirstOrDefault();
-
-            if (record.Amount != double.Parse(notiOnepayRequest.vpc_Amount))
-            {
+                _logger.LogError($"vpc_TxnResponsCode Error : {notiOnepayRequest.vpc_TxnResponseCode}");
                 res.ErrorCode = ErrorCodeEnum.Error;
-                res.Data = "Số tiền từ request không khớp nhau";
+                res.Data = "Giao dịch không thành công";
                 res.Message = ErrorCodeEnum.Error.GetDescription();
-                return BadRequest(res);
+                return Ok(res);
             }
-            //Tạo ransaction để lưu dưới trạng thái thanh toán thành công
-            record.PartnerTransId = notiOnepayRequest.vpc_TransactionNo;
-            record.Status = (int)TransType.Done;
-
-            //Update trans thanh toán thành công vào DB
-            Utils.UpdateTransaction(record, _paymentDbContext);
-
-            res.Data = response;
-            return Ok(res);
         }
         catch (Exception ex)
         {
@@ -256,7 +278,7 @@ public class OnePayController : ControllerBase
         }
     }
 
-    private async Task<string> CreateQR(string invoiceId, PaymentConfig paymentConfig, string id = "vietcombank")
+    private async Task<string> CreateQR(string invoiceId, QRPayTerminal paymentConfig, string id = "vietcombank")
     {
         try
         {
@@ -286,10 +308,13 @@ public class OnePayController : ControllerBase
                 var responseBody = await response.Content.ReadAsStringAsync();
                 var objResponse = JsonSerializer.Deserialize<OnePayQrResponse>(responseBody, _jsonSerializerOptions);
                 var nameImage = Guid.NewGuid();
+
+                //Nếu đường dẫn chứa các folder chưa tồn tại thì sẽ tạo các folder
                 if (!Directory.Exists(paymentConfig.PathImage))
                 {
                     Directory.CreateDirectory(paymentConfig.PathImage);
                 }
+
                 Utils.GenerateQRCode(objResponse.data, 300, 300, $"{paymentConfig.PathImage}{nameImage}.png", "ONEPAY QR");
                 _logger.LogInformation($"Response string QRCode : {objResponse}");
                 return $"{paymentConfig.PathImage}{nameImage}.png";

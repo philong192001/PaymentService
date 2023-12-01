@@ -1,0 +1,220 @@
+2023-12-01 11:18:48.797 +07:00  INF  Now listening on: https://localhost:7116
+2023-12-01 11:18:48.828 +07:00  INF  Now listening on: http://localhost:5271
+2023-12-01 11:18:48.831 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-12-01 11:18:48.831 +07:00  INF  Hosting environment: Development
+2023-12-01 11:18:48.831 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-12-01 11:18:51.373 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-12-01 11:18:51.961 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 591.4511ms
+2023-12-01 11:18:52.006 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-12-01 11:18:52.010 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 4.4420ms
+2023-12-01 11:18:52.015 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-12-01 11:18:52.111 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 96.0584ms
+2023-12-01 11:18:52.217 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-12-01 11:18:52.381 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 163.5451ms
+2023-12-01 11:18:52.889 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/favicon-32x32.png - -
+2023-12-01 11:18:52.915 +07:00  INF  Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-12-01 11:18:52.915 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/favicon-32x32.png - - - 200 628 image/png 25.8502ms
+2023-12-01 11:19:18.220 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176
+2023-12-01 11:19:18.229 +07:00  INF  No CORS policy found for the specified request.
+2023-12-01 11:19:18.232 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 11:19:18.251 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-12-01 11:19:19.530 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-12-01 11:19:20.687 +07:00  INF  Executed DbCommand (56ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-12-01 11:19:50.404 +07:00  INF  Executing BadRequestObjectResult, writing value of type 'System.String'.
+2023-12-01 11:19:50.416 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 32153.0721ms
+2023-12-01 11:19:50.417 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 11:19:50.462 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176 - 400 - text/plain;+charset=utf-8 32241.7949ms
+2023-12-01 11:53:26.039 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176
+2023-12-01 11:53:26.048 +07:00  INF  No CORS policy found for the specified request.
+2023-12-01 11:53:26.048 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 11:53:26.048 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-12-01 11:53:26.054 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-12-01 11:53:26.077 +07:00  INF  Executed DbCommand (3ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-12-01 11:53:26.195 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 11:53:26.196 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 11:53:26.360 +07:00  INF  Received HTTP response headers after 159.9772ms - 200
+2023-12-01 11:53:26.361 +07:00  INF  End processing HTTP request after 168.8499ms - 200
+2023-12-01 11:53:26.369 +07:00  INF  Executing NotFoundObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-01 11:53:26.379 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 330.8916ms
+2023-12-01 11:53:26.379 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 11:53:26.379 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176 - 404 - application/json;+charset=utf-8 340.6125ms
+2023-12-01 11:53:29.153 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176
+2023-12-01 11:53:29.154 +07:00  INF  No CORS policy found for the specified request.
+2023-12-01 11:53:29.154 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 11:53:29.154 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-12-01 11:53:29.207 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-12-01 11:53:29.219 +07:00  INF  Executed DbCommand (6ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-12-01 11:53:29.220 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 11:53:29.220 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 11:53:29.558 +07:00  INF  Received HTTP response headers after 338.215ms - 200
+2023-12-01 11:53:29.559 +07:00  INF  End processing HTTP request after 338.6512ms - 200
+2023-12-01 11:53:29.579 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-CHWADDBWC2M7BC63/qrs"
+2023-12-01 11:53:29.579 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-CHWADDBWC2M7BC63/qrs"
+2023-12-01 11:53:29.689 +07:00  INF  Received HTTP response headers after 109.0696ms - 201
+2023-12-01 11:53:29.689 +07:00  INF  End processing HTTP request after 109.8635ms - 201
+2023-12-01 11:53:30.109 +07:00  INF  Response string QRCode : Payment.App.Models.OnePay.OnePayQrResponse
+2023-12-01 11:53:30.109 +07:00  INF   Value ID : INV-CHWADDBWC2M7BC63 -- pathImage : D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Image\OnePay\8bcc9e30-7fbe-41df-bfa4-c71e744751e3.png -- Query : ?id=INV-CHWADDBWC2M7BC63&locale=vi
+2023-12-01 11:53:30.333 +07:00  INF  Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [QRPay.Transaction] ([Amount], [BookId], [CompanyId], [CustomerName], [DateCreateQR], [DatePay], [DriverCode], [DriverName], [ErrorCode], [ExpiredFee], [FeeMonth], [Message], [Mobile], [PartnerTransId], [PaymentType], [PrivateCode], [QRCode], [Status], [TripId], [VehiclePlate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+SELECT [TransId]
+FROM [QRPay.Transaction]
+WHERE @@ROWCOUNT = 1 AND [TransId] = scope_identity();
+2023-12-01 11:53:30.377 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-01 11:53:30.377 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 1223.3225ms
+2023-12-01 11:53:30.377 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 11:53:30.378 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176 - 200 - application/json;+charset=utf-8 1224.1513ms
+2023-12-01 13:51:35.976 +07:00  INF  Now listening on: https://localhost:7116
+2023-12-01 13:51:36.007 +07:00  INF  Now listening on: http://localhost:5271
+2023-12-01 13:51:36.009 +07:00  INF  Application started. Press Ctrl+C to shut down.
+2023-12-01 13:51:36.010 +07:00  INF  Hosting environment: Development
+2023-12-01 13:51:36.010 +07:00  INF  Content root path: D:\longpv2\.NetCore-Microservices\PaymentService\PaymentService\Payment.App\
+2023-12-01 13:51:36.401 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/index.html - -
+2023-12-01 13:51:36.779 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/index.html - - - 200 - text/html;charset=utf-8 380.8645ms
+2023-12-01 13:51:36.844 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-12-01 13:51:36.844 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-12-01 13:51:36.865 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 20.9026ms
+2023-12-01 13:51:36.872 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - -
+2023-12-01 13:51:36.872 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - -
+2023-12-01 13:51:36.873 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - -
+2023-12-01 13:51:36.873 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_framework/aspnetcore-browser-refresh.js - - - 200 12354 application/javascript;+charset=utf-8 0.3028ms
+2023-12-01 13:51:36.885 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 41.1331ms
+2023-12-01 13:51:36.902 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/_vs/browserLink - -
+2023-12-01 13:51:36.940 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 38.1327ms
+2023-12-01 13:51:36.949 +07:00  INF  Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-12-01 13:51:36.949 +07:00  INF  Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-12-01 13:51:36.949 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-bundle.js - - - 200 1061536 application/javascript 77.3040ms
+2023-12-01 13:51:36.949 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/swagger-ui-standalone-preset.js - - - 200 312163 application/javascript 77.3227ms
+2023-12-01 13:51:37.063 +07:00  INF  Request starting HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - -
+2023-12-01 13:51:37.228 +07:00  INF  Request finished HTTP/2 GET https://localhost:7116/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 164.6721ms
+2023-12-01 13:51:52.941 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176
+2023-12-01 13:51:52.948 +07:00  INF  No CORS policy found for the specified request.
+2023-12-01 13:51:52.951 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:51:52.970 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-12-01 13:51:53.831 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-12-01 13:51:54.945 +07:00  INF  Executed DbCommand (53ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-12-01 13:51:55.070 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:51:55.071 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:51:55.240 +07:00  INF  Received HTTP response headers after 159.9331ms - 200
+2023-12-01 13:51:55.244 +07:00  INF  End processing HTTP request after 175.8835ms - 200
+2023-12-01 13:51:55.258 +07:00  INF  Executing NotFoundObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-01 13:51:55.271 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 2295.9684ms
+2023-12-01 13:51:55.272 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:51:55.278 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176 - 404 - application/json;+charset=utf-8 2337.6308ms
+2023-12-01 13:51:57.038 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176
+2023-12-01 13:51:57.040 +07:00  INF  No CORS policy found for the specified request.
+2023-12-01 13:51:57.041 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:51:57.041 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-12-01 13:51:57.043 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-12-01 13:51:57.056 +07:00  INF  Executed DbCommand (7ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-12-01 13:51:57.057 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:51:57.057 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:51:57.274 +07:00  INF  Received HTTP response headers after 217.2537ms - 200
+2023-12-01 13:51:57.274 +07:00  INF  End processing HTTP request after 217.6115ms - 200
+2023-12-01 13:51:57.287 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-TGAKUKNM9HMJLDQ5/qrs"
+2023-12-01 13:51:57.287 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-TGAKUKNM9HMJLDQ5/qrs"
+2023-12-01 13:51:57.349 +07:00  INF  Received HTTP response headers after 61.7769ms - 201
+2023-12-01 13:51:57.349 +07:00  INF  End processing HTTP request after 62.1946ms - 201
+2023-12-01 13:51:57.492 +07:00  INF   Value ID : INV-TGAKUKNM9HMJLDQ5 -- pathImage : Could not find a part of the path 'E:\Softwares\StaxiBackup\126.G7Taxi\WebManager\Media\Uploads\Qrcode\'. -- Query : ?id=INV-TGAKUKNM9HMJLDQ5&locale=vi
+2023-12-01 13:51:57.683 +07:00  INF  Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [QRPay.Transaction] ([Amount], [BookId], [CompanyId], [CustomerName], [DateCreateQR], [DatePay], [DriverCode], [DriverName], [ErrorCode], [ExpiredFee], [FeeMonth], [Message], [Mobile], [PartnerTransId], [PaymentType], [PrivateCode], [QRCode], [Status], [TripId], [VehiclePlate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+SELECT [TransId]
+FROM [QRPay.Transaction]
+WHERE @@ROWCOUNT = 1 AND [TransId] = scope_identity();
+2023-12-01 13:51:57.731 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-01 13:51:57.731 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 690.5248ms
+2023-12-01 13:51:57.731 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:51:57.731 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176 - 200 - application/json;+charset=utf-8 693.1222ms
+2023-12-01 13:52:50.823 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176
+2023-12-01 13:52:50.824 +07:00  INF  No CORS policy found for the specified request.
+2023-12-01 13:52:50.824 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:52:50.824 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-12-01 13:52:50.865 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-12-01 13:52:50.876 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-12-01 13:52:50.876 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:52:50.876 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:52:51.003 +07:00  INF  Received HTTP response headers after 127.1232ms - 200
+2023-12-01 13:52:51.003 +07:00  INF  End processing HTTP request after 127.303ms - 200
+2023-12-01 13:52:54.260 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-PJTTPHEZDSFR8KDS/qrs"
+2023-12-01 13:52:54.260 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-PJTTPHEZDSFR8KDS/qrs"
+2023-12-01 13:52:54.364 +07:00  INF  Received HTTP response headers after 103.7993ms - 201
+2023-12-01 13:52:54.364 +07:00  INF  End processing HTTP request after 104.376ms - 201
+2023-12-01 13:53:01.570 +07:00  INF   Value ID : INV-PJTTPHEZDSFR8KDS -- pathImage : Could not find a part of the path 'E:\Softwares\StaxiBackup\126.G7Taxi\WebManager\Media\Uploads\Qrcode\'. -- Query : ?id=INV-PJTTPHEZDSFR8KDS&locale=vi
+2023-12-01 13:53:01.600 +07:00  INF  Executed DbCommand (13ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [QRPay.Transaction] ([Amount], [BookId], [CompanyId], [CustomerName], [DateCreateQR], [DatePay], [DriverCode], [DriverName], [ErrorCode], [ExpiredFee], [FeeMonth], [Message], [Mobile], [PartnerTransId], [PaymentType], [PrivateCode], [QRCode], [Status], [TripId], [VehiclePlate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+SELECT [TransId]
+FROM [QRPay.Transaction]
+WHERE @@ROWCOUNT = 1 AND [TransId] = scope_identity();
+2023-12-01 13:53:01.614 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-01 13:53:01.614 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 10790.2099ms
+2023-12-01 13:53:01.614 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:53:01.614 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176 - 200 - application/json;+charset=utf-8 10791.0748ms
+2023-12-01 13:53:03.621 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176
+2023-12-01 13:53:03.621 +07:00  INF  No CORS policy found for the specified request.
+2023-12-01 13:53:03.622 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:53:03.622 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-12-01 13:53:03.623 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-12-01 13:53:03.627 +07:00  INF  Executed DbCommand (4ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-12-01 13:53:03.627 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:53:03.628 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:53:03.661 +07:00  INF  Received HTTP response headers after 33.3363ms - 200
+2023-12-01 13:53:03.661 +07:00  INF  End processing HTTP request after 33.5204ms - 200
+2023-12-01 13:53:03.665 +07:00  INF  Executing NotFoundObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-01 13:53:03.665 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 43.4704ms
+2023-12-01 13:53:03.665 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:53:03.665 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176 - 404 - application/json;+charset=utf-8 43.9999ms
+2023-12-01 13:53:04.974 +07:00  INF  Request starting HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176
+2023-12-01 13:53:04.975 +07:00  INF  No CORS policy found for the specified request.
+2023-12-01 13:53:04.975 +07:00  INF  Executing endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:53:04.975 +07:00  INF  Route matched with {action = "GetQR", controller = "OnePay"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetQR(Payment.App.Models.OnePay.OnePayRequest) on controller Payment.App.Controllers.OnePayController (Payment.App).
+2023-12-01 13:53:04.975 +07:00  INF  Entity Framework Core 6.0.23 initialized 'PaymentDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.23' with options: None
+2023-12-01 13:53:04.986 +07:00  INF  Executed DbCommand (10ms) [Parameters=[@__onePayRequest_CompanyId_0='?' (DbType = Int32), @__ToString_1='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [q].[Id], [q].[AccessCode], [q].[CompanyId], [q].[DriverCode], [q].[DriverName], [q].[HashCode], [q].[MasterMerchant], [q].[MerchantCode], [q].[MerchantName], [q].[MerchantType], [q].[Password], [q].[PathImage], [q].[PaymentType], [q].[TerminalCode], [q].[TerminalName], [q].[TerminalType], [q].[UrlCreateQR], [q].[UrlDriverCompany], [q].[UrlGetToken], [q].[UserName]
+FROM [QRPay.Terminals] AS [q]
+WHERE ([q].[CompanyId] = @__onePayRequest_CompanyId_0) AND ([q].[PaymentType] = @__ToString_1)
+2023-12-01 13:53:04.986 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:53:04.986 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/vpcpay.op"
+2023-12-01 13:53:05.159 +07:00  INF  Received HTTP response headers after 172.9776ms - 200
+2023-12-01 13:53:05.159 +07:00  INF  End processing HTTP request after 173.1567ms - 200
+2023-12-01 13:53:22.182 +07:00  INF  Start processing HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-DDZ4GBF4F7VV9P8G/qrs"
+2023-12-01 13:53:22.183 +07:00  INF  Sending HTTP request POST "https://mtf.onepay.vn/paygate/api/v1/invoices/INV-DDZ4GBF4F7VV9P8G/qrs"
+2023-12-01 13:53:22.347 +07:00  INF  Received HTTP response headers after 163.9097ms - 201
+2023-12-01 13:53:22.347 +07:00  INF  End processing HTTP request after 164.2802ms - 201
+2023-12-01 13:53:54.931 +07:00  INF   Value ID : INV-DDZ4GBF4F7VV9P8G -- pathImage : Could not find a part of the path 'E:\Softwares\StaxiBackup\126.G7Taxi\WebManager\Media\Uploads\Qrcode\'. -- Query : ?id=INV-DDZ4GBF4F7VV9P8G&locale=vi
+2023-12-01 13:53:55.024 +07:00  INF  Executed DbCommand (64ms) [Parameters=[@p0='?' (DbType = Double), @p1='?' (DbType = Guid), @p2='?' (DbType = Int32), @p3='?' (Size = 200), @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?' (Size = 50), @p7='?' (Size = 50), @p8='?' (DbType = Int32), @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?' (Size = 500), @p12='?' (Size = 50), @p13='?' (Size = 200), @p14='?' (DbType = Int32), @p15='?' (Size = 50), @p16='?' (Size = 200), @p17='?' (DbType = Int32), @p18='?' (Size = 50), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [QRPay.Transaction] ([Amount], [BookId], [CompanyId], [CustomerName], [DateCreateQR], [DatePay], [DriverCode], [DriverName], [ErrorCode], [ExpiredFee], [FeeMonth], [Message], [Mobile], [PartnerTransId], [PaymentType], [PrivateCode], [QRCode], [Status], [TripId], [VehiclePlate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+SELECT [TransId]
+FROM [QRPay.Transaction]
+WHERE @@ROWCOUNT = 1 AND [TransId] = scope_identity();
+2023-12-01 13:53:55.028 +07:00  INF  Executing OkObjectResult, writing value of type 'Payment.App.DTOs.ResponseAppDTO`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-12-01 13:53:55.028 +07:00  INF  Executed action Payment.App.Controllers.OnePayController.GetQR (Payment.App) in 50053.4547ms
+2023-12-01 13:53:55.028 +07:00  INF  Executed endpoint 'Payment.App.Controllers.OnePayController.GetQR (Payment.App)'
+2023-12-01 13:53:55.028 +07:00  INF  Request finished HTTP/2 POST https://localhost:7116/api/OnePay/GetQR application/json 176 - 200 - application/json;+charset=utf-8 50054.0601ms

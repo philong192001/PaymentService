@@ -9,9 +9,14 @@ public class VnPayQrRequest
     public string Amount { get; set; }
 
     /// <summary>
-    /// Mã hóa đơn
+    /// Id chuyến của khách hàng
     /// </summary>
     public string BookId { get; set; }
+
+    /// <summary>
+    /// ID chuyến của lái xe
+    /// </summary>
+    public string TripId { get; set; }
 
     /// <summary>
     /// ID Công ty

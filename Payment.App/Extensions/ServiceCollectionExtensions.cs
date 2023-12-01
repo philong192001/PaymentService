@@ -12,10 +12,6 @@ public static class ServiceCollectionExtensions
         {
             options.EnableRetryOnFailure();
         }));
-        services.AddDbContext<ConfigDbContext>(x => x.UseSqlServer(appSetting.ConnectionString3, options =>
-        {
-            options.EnableRetryOnFailure();
-        }));
         services.AddHttpContextAccessor();
 
       
